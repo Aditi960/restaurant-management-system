@@ -25,12 +25,32 @@ int main()
 
 	}
 	void welcome() {
+		char name[100];
 	system("cls");
-    printf("Welcome to the restaurant management and billing system\n");
+    printf("\n\nWelcome to the restaurant management and billing system\n");
     printf("\n \n \tA project by Aditi Thakare\n\n");
     printf("Press any key to continue...");
-    getchar(); // Waits for user input
+    getch();
     system("cls");
+	printf("\nenter your name :- ");
+	scanf("%s",name);
+	fflush(stdin);
+	 char c;
+     printf("Enter F for female, M for male and O for others :-->\n ");
+     scanf("%c", &c);
+     if(c == 'F'|| c == 'f')
+     {
+          printf("Welcome Ms.%s\n",name);
+     }
+     else if (c == 'M'|| c == 'm')
+     {
+          printf("Welcome Mr.%s\n",name);
+     }
+     else
+     {
+          printf("Please give the right input..");
+     }
+		
 	}
 	void menu(int op_choice)
 	{
