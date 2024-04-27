@@ -1,10 +1,13 @@
 #include<stdio.h>
 #include<string.h>
+#include <stdlib.h>
 void menu1();
 int choose();
+void welcome();
 void menu(int op_choice); 
 int main()
 	{
+		welcome();
 		int op=choose();
 		menu(op);
 		return 0; 
@@ -20,6 +23,14 @@ int main()
 		scanf("%d",&ch);
 		return ch;
 
+	}
+	void welcome() {
+	system("cls");
+    printf("Welcome to the restaurant management and billing system\n");
+    printf("\n \n \tA project by Aditi Thakare\n\n");
+    printf("Press any key to continue...");
+    getchar(); // Waits for user input
+    system("cls");
 	}
 	void menu(int op_choice)
 	{
@@ -50,7 +61,7 @@ int main()
 		printf("enter your no of dishes\n");
 		scanf("%d",&n);
 		int arr[n];
-		for(int i=0; i<n;i++)
+		for(int i=0;i<n;i++)
 		{
 			
 			printf("enter the dish no %d\n",i+1);
