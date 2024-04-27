@@ -13,7 +13,7 @@ int main()
 	int choose()
 	{
 		int ch;
-		printf("enter wheater u want"
+		printf("enter wheater u want :-"
 		"1. breakfast\n"
 		"2.lunch\n"
 		"3.dinner\n");
