@@ -7,7 +7,7 @@ int main()
 	{
 		int op=choose();
 		menu(op);
-		return 0;
+		return 0; 
 
 	}
 	int choose()
@@ -42,7 +42,7 @@ int main()
 		printf("Your choices for the breakfast are\n");
 		printf("\t \t \t Veg \t \t \t");
 		printf("1.Idli Sambar \t -- 10Rs/pc \n ");
-		printf("2.Mendu Vada \t -- 20Rs/pc \n ");
+		printf("2.Mendu Vada  \t -- 20Rs/pc \n ");
 		printf("3.Upma \t -- 20Rs/plate \n ");
 		printf("4.Poha \t -- 15Rs/plate \n ");
 		printf("5.Paratha \t -- 20Rs/pc \n ");
@@ -80,7 +80,7 @@ int main()
                 missal++;
                 break;
             default:
-                printf("Invalid dish number entered: %d\n", arr[i]);
+                printf("Invalid dish number entered %d\n", arr[i]);
                 break;
         }
 	}
