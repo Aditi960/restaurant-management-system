@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include <stdlib.h>
+#include<windows.h>
 void menu1();
 int choose();
 void welcome();
@@ -15,6 +16,7 @@ int main()
 	}
 	int choose()
 	{
+		system("cls");
 		int ch;
 		printf("enter wheater u want :..-"
 		"1. breakfast\n"
@@ -50,7 +52,12 @@ int main()
      {
           printf("Please give the right input..");
      }
-		
+	  printf("Wait for 5 seconds...\n");
+    for (int i = 5; i > 0; i--) {
+        printf("%d...\n", i);
+        sleep(1); // Pause for 1 second
+
+	}
 	}
 	void menu(int op_choice)
 	{
