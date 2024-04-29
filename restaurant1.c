@@ -209,7 +209,7 @@ int main()
 			case 7:
                Mixed_Veg_Curry++;
                 break;
-				case 11:
+            case 11:
                 butter_chicken++;
                 break;
             case 12:
@@ -292,5 +292,106 @@ int main()
 	}
 	int menu3()
 	{
-		printf("will be updated");
-	}
+        int n;
+		int total;
+         printf("Vegetarian options for dinner:\n");
+    printf("\t1. Palak Paneer \t -- Rs. 250\n");
+    printf("\t2. Aloo Baingan \t -- Rs. 220\n");
+    printf("\t3. Vegetable Korma \t -- Rs. 280\n");
+    printf("\t4. Chana Masala \t -- Rs. 200\n");
+    printf("\t5. Mushroom Masala \t -- Rs. 240\n");
+
+   
+    printf("\nNon-vegetarian options for dinner:\n");
+    printf("\t6. Chicken Curry \t -- Rs. 320\n");
+    printf("\t7. Mutton Rogan Josh \t -- Rs. 380\n");
+    printf("\t8. Fish Tikka \t -- Rs. 350\n");
+    printf("\t9. Prawn Biryani \t -- Rs. 400\n");
+    printf("\t10. Chicken Kebabs \t -- Rs. 420\n");
+
+    printf("enter your no of dishes\n");
+		scanf("%d",&n);
+		int arr[n];
+		for(int i=0;i<n;i++)
+        {
+			
+			printf("enter the dish no %d\n",i+1);
+			scanf("%d",&arr[i]);
+        }
+            int Palak_Paneer = 0, Aloo_Baingan = 0, Vegetable_Korma = 0, Chana_Masala = 0, Mushroom_Masala = 0, Chicken_Curry = 0, Mutton_Rogan_Josh = 0, Fish_Tikka = 0, Prawn_Biryani = 0, Chicken_Kebabs = 0;
+    int total = 0;
+    for (int i = 0; i < n; i++) {
+        switch (arr[i]) {
+            case 1:
+                Palak_Paneer++;
+                break;
+            case 2:
+                Aloo_Baingan++;
+                break;
+            case 3:
+                Vegetable_Korma++;
+                break;
+            case 4:
+                Chana_Masala++;
+                break;
+            case 5:
+                Mushroom_Masala++;
+                break;
+            case 6:
+                Chicken_Curry++;
+                break;
+            case 7:
+                Mutton_Rogan_Josh++;
+                break;
+            case 8:
+                Fish_Tikka++;
+                break;
+            case 9:
+                Prawn_Biryani++;
+                break;
+            case 10:
+                Chicken_Kebabs++;
+                break;
+            default:
+                printf("Invalid dish number entered %d\n", arr[i]);
+                break;
+        }
+    }
+    printf("You have ordered:\n");
+    if (Palak_Paneer > 0) {
+        printf("%d Palak Paneer\n", Palak_Paneer);
+    }
+    if (Aloo_Baingan > 0) {
+        printf("%d Aloo Baingan\n", Aloo_Baingan);
+    }
+    if (Vegetable_Korma > 0) {
+        printf("%d Vegetable Korma\n", Vegetable_Korma);
+    }
+    if (Chana_Masala > 0) {
+        printf("%d Chana Masala\n", Chana_Masala);
+    }
+    if (Mushroom_Masala > 0) {
+        printf("%d Mushroom Masala\n", Mushroom_Masala);
+    }
+    if (Chicken_Curry > 0) {
+        printf("%d Chicken Curry\n", Chicken_Curry);
+    }
+    if (Mutton_Rogan_Josh > 0) {
+        printf("%d Mutton Rogan Josh\n", Mutton_Rogan_Josh);
+    }
+    if (Fish_Tikka > 0) {
+        printf("%d Fish Tikka\n", Fish_Tikka);
+    }
+    if (Prawn_Biryani > 0) {
+        printf("%d Prawn Biryani\n", Prawn_Biryani);
+    }
+    if (Chicken_Kebabs > 0) {
+        printf("%d Chicken Kebabs\n", Chicken_Kebabs);
+    }
+    total = (Palak_Paneer * 250) + (Aloo_Baingan * 220) + (Vegetable_Korma * 280) + (Chana_Masala * 200) + (Mushroom_Masala * 240) +
+            (Chicken_Curry * 320) + (Mutton_Rogan_Josh * 380) + (Fish_Tikka * 350) + (Prawn_Biryani * 400) + (Chicken_Kebabs * 420);
+    return total;
+    }
+
+
+		
