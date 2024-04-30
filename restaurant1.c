@@ -280,12 +280,12 @@ int main()
         printf("%d Chicken Fried Rice\n", chicken_fried_rice);
     }
 
-    total = (vegbiryani*10) + (Butter_Paneer*20) + (Chana_Masala*20) + (Paneer_Tikka*15) + (Veg_f_Rice*20) + (Mixed_Veg_Curry*80) + 
+    total2 = (vegbiryani*10) + (Butter_Paneer*20) + (Chana_Masala*20) + (Paneer_Tikka*15) + (Veg_f_Rice*20) + (Mixed_Veg_Curry*80) + 
             (butter_chicken*350) + (chicken_biryani*320) + (fish_curry*400) + (egg_curry*220) + (tandoori_chicken*380) + 
             (chicken_tikka_masala*320) + (prawn_pulao*420) + (chicken_fried_rice*300);
 
     printf("Total bill: Rs. %d\n", total);
-    return total;
+    return total2;
 }
 	}
 	int menu3()
@@ -387,7 +387,7 @@ int main()
     }
     total3 = (Palak_Paneer * 250) + (Aloo_Baingan * 220) + (Vegetable_Korma * 280) + (Chana_Masala * 200) + (Mushroom_Masala * 240) +
             (Chicken_Curry * 320) + (Mutton_Rogan_Josh * 380) + (Fish_Tikka * 350) + (Prawn_Biryani * 400) + (Chicken_Kebabs * 420);
-    return total;
+    return total3;
     }
 
 
