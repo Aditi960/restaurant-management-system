@@ -82,7 +82,7 @@ int main()
 	int menu1()
 	{
 		int n;
-		int total;
+		int total1;
 		printf("Your choices for the breakfast are\n");
 		printf("\t \t \t Veg \t \t \t\n");
 		printf("1.Idli Sambar \t -- 10Rs/pc \n ");
@@ -143,14 +143,14 @@ int main()
 	if (missal> 0) 
         printf("%d Missal\n", missal);
     }
-	 total=((idli*10)+(mendu*20)+(upma*20)+(poha*15)+(paratha*20)+(missal*80));
+	 total1=((idli*10)+(mendu*20)+(upma*20)+(poha*15)+(paratha*20)+(missal*80));
 		}
 		return total;
 	}
 	int menu2()
 	{
 		int n;
-		int total;
+		int total2;
 		// vegetarian options
 		printf("Vegetarian options for lunch:\n");
 		printf("\t1. Vegetable Biryani \t -- Rs. 300\n");
@@ -183,8 +183,7 @@ int main()
 
 		}
 		{
-			int vegbiryani = 0, Butter_Paneer = 0, Chana_Masala = 0, Paneer_Tikka = 0, Veg_f_Rice = 0, Dal_Tadka=0,Mixed_Veg_Curry=0;
-			int butter_chicken = 0, chicken_biryani = 0, fish_curry = 0, egg_curry = 0, tandoori_chicken = 0, chicken_tikka_masala = 0, prawn_pulao = 0, chicken_fried_rice = 0;
+			int vegbiryani = 0, Butter_Paneer = 0, Chana_Masala = 0, Paneer_Tikka = 0, Veg_f_Rice = 0, Dal_Tadka=0,Mixed_Veg_Curry=0,butter_chicken = 0, chicken_biryani = 0, fish_curry = 0, egg_curry = 0, tandoori_chicken = 0, chicken_tikka_masala = 0, prawn_pulao = 0, chicken_fried_rice = 0;
     int total = 0;
     for (int i = 0; i < n; i++) {
         switch (arr[i]) {
