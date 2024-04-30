@@ -184,7 +184,6 @@ int main()
 		}
 		{
 			int vegbiryani = 0, Butter_Paneer = 0, Chana_Masala = 0, Paneer_Tikka = 0, Veg_f_Rice = 0, Dal_Tadka=0,Mixed_Veg_Curry=0,butter_chicken = 0, chicken_biryani = 0, fish_curry = 0, egg_curry = 0, tandoori_chicken = 0, chicken_tikka_masala = 0, prawn_pulao = 0, chicken_fried_rice = 0;
-    int total = 0;
     for (int i = 0; i < n; i++) {
         switch (arr[i]) {
             case 1:
@@ -292,7 +291,7 @@ int main()
 	int menu3()
 	{
         int n;
-		int total;
+		int total3;
          printf("Vegetarian options for dinner:\n");
     printf("\t1. Palak Paneer \t -- Rs. 250\n");
     printf("\t2. Aloo Baingan \t -- Rs. 220\n");
@@ -318,7 +317,6 @@ int main()
 			scanf("%d",&arr[i]);
         }
             int Palak_Paneer = 0, Aloo_Baingan = 0, Vegetable_Korma = 0, Chana_Masala = 0, Mushroom_Masala = 0, Chicken_Curry = 0, Mutton_Rogan_Josh = 0, Fish_Tikka = 0, Prawn_Biryani = 0, Chicken_Kebabs = 0;
-    int total = 0;
     for (int i = 0; i < n; i++) {
         switch (arr[i]) {
             case 1:
@@ -387,7 +385,7 @@ int main()
     if (Chicken_Kebabs > 0) {
         printf("%d Chicken Kebabs\n", Chicken_Kebabs);
     }
-    total = (Palak_Paneer * 250) + (Aloo_Baingan * 220) + (Vegetable_Korma * 280) + (Chana_Masala * 200) + (Mushroom_Masala * 240) +
+    total3 = (Palak_Paneer * 250) + (Aloo_Baingan * 220) + (Vegetable_Korma * 280) + (Chana_Masala * 200) + (Mushroom_Masala * 240) +
             (Chicken_Curry * 320) + (Mutton_Rogan_Josh * 380) + (Fish_Tikka * 350) + (Prawn_Biryani * 400) + (Chicken_Kebabs * 420);
     return total;
     }
