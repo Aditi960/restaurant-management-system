@@ -7,7 +7,7 @@ int menu2();
 int menu3();
 int choose();
 char* welcome();
-int bill(int t,char* n);
+int bill(int t1,int t2,int t3,char* n);
 void menu(int op_choice); 
 
 int main()
@@ -15,6 +15,11 @@ int main()
 		welcome();
 		int op=choose();
 		menu(op);
+        int tt1=menu1();
+        int tt2=menu2();
+        int tt3=menu3();
+        char *name1=welcome();
+        bill(tt1,tt2,tt3,name1);
 		return 0; 
 
 	}
@@ -50,7 +55,7 @@ int main()
         sleep(1); // Pause for 1 second
 
 	}
-	return name;
+	return name,c;
 	}
 	int choose()
 	{
@@ -389,5 +394,7 @@ int main()
     return total3;
     }
 
-
-		
+int bill(int t1,int t2,int t3,char* n)
+{
+printf("")
+}
