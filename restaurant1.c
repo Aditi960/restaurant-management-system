@@ -385,8 +385,7 @@ int main()
     if (Chicken_Kebabs > 0) {
         printf("%d Chicken Kebabs\n", Chicken_Kebabs);
     }
-    total3 = (Palak_Paneer * 250) + (Aloo_Baingan * 220) + (Vegetable_Korma * 280) + (Chana_Masala * 200) + (Mushroom_Masala * 240) +
-            (Chicken_Curry * 320) + (Mutton_Rogan_Josh * 380) + (Fish_Tikka * 350) + (Prawn_Biryani * 400) + (Chicken_Kebabs * 420);
+    total3 = (Palak_Paneer * 250) + (Aloo_Baingan * 220) + (Vegetable_Korma * 280) + (Chana_Masala * 200) + (Mushroom_Masala * 240) +(Chicken_Curry * 320) + (Mutton_Rogan_Josh * 380) + (Fish_Tikka * 350) + (Prawn_Biryani * 400) + (Chicken_Kebabs * 420);
     return total3;
     }
 
