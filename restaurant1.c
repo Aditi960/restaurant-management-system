@@ -2,61 +2,67 @@
 #include<string.h>
 #include <stdlib.h>//for system()//
 #include<windows.h>//sleep()//
+typedef struct {
+    char name[100];
+    char gen;
+}weldata;
+
+weldata welcome();
 int menu1();
 int menu2();
 int menu3();
 int choose();
-char* welcome();
+
 int bill(int t1,int t2,int t3,char* n);
 void menu(int op_choice); 
 
-int main()
-	{
+int main(){
+
 		welcome();
+         weldata data=welcome();
+    if(data.gen=='F' || data.gen=='f')
+    {
+        printf("Welcome Ms.%s\n", data.name);
+    }
+    else if(data.gen=='M' || data.gen=='m')
+    {
+        printf("Welcome Mr.%s\n", data.name);
+    }
+    else{
+        printf("Please give the right input..\n");
+    }
+    printf("Wait for 5 seconds...\n");
+    for (int i = 5; i > 0; i--) {
+        printf("%d...\n", i);
+        // Pause for 1 second
+         sleep(1);
 		int op=choose();
 		menu(op);
         int tt1=menu1();
         int tt2=menu2();
         int tt3=menu3();
-        char *name1=welcome();
-        bill(tt1,tt2,tt3,name1);
+        bill(tt1, tt2, tt3, data.name);
+
 		return 0; 
 
+    }
 	}
-	char* welcome() {
-		char name[100];
-	system("cls");
+    weldata welcome()
+{
+    weldata data;
+    system("cls");
     printf("\n\nWelcome to the restaurant management and billing system\n");
     printf("\n \n \tA project by Aditi Thakare\n\n");
     printf("Press any key to continue...");
-    getch();
+     getch();
     system("cls");
-	printf("\nenter your name :- ");
-	scanf("%s",name);
-	fflush(stdin);
-	 char c;
-     printf("Enter F for female, M for male and O for others :-->\n ");
-     scanf("%c", &c);
-     if(c == 'F'|| c == 'f')
-     {
-          printf("Welcome Ms.%s\n",name);
-     }
-     else if (c == 'M'|| c == 'm')
-     {
-          printf("Welcome Mr.%s\n",name);
-     }
-     else
-     {
-          printf("Please give the right input..");
-     }
-	  printf("Wait for 5 seconds...\n");
-    for (int i = 5; i > 0; i--) {
-        printf("%d...\n", i);
-        sleep(1); // Pause for 1 second
-
-	}
-	return name,c;
-	}
+    printf("\nEnter your name: ");
+    scanf("%s", data.name);
+    fflush(stdin);
+    printf("Enter F for female, M for male and O for others: ");
+    scanf(" %c", &data.gen); // Note the space before %c to consume any previous newline characters
+    return data;
+}
 	int choose()
 	{
 		system("cls");
@@ -394,7 +400,26 @@ int main()
     return total3;
     }
 
-int bill(int t1,int t2,int t3,char* n)
+int bill(int t1,int t2,int t3,weldata data)
 {
-printf("")
+  printf("Thank You ");
+    if (data.gen == 'F' || data.gen == 'f') {
+        printf("Ms.%s\n", data.name);
+    } else if (data.gen == 'M' || data.gen == 'm') {
+        printf("Mr.%s\n", data.name);
+    } else {
+        printf("for visiting our restaurant, %s\n", data.name); // Handle other genders or invalid input
+
+    }
+    printf("\t Your total bill is = %d Rs",t1+t2+t3);
+    printf("\n Visit Again");
+    if (data.gen == 'F' || data.gen == 'f') {
+        printf("Ms.%s\n", data.name);
+    } else if (data.gen == 'M' || data.gen == 'm') {
+        printf("Mr.%s\n", data.name);
+    } else {
+        printf("%s\n", data.name);
+
+} 
+return 0;
 }
