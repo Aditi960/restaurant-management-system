@@ -40,7 +40,7 @@ int main(){
         int tt1=menu1();
         int tt2=menu2();
         int tt3=menu3();
-        bill(tt1, tt2, tt3, data.name);
+        bill(tt1, tt2, tt3, data);
 
 		return 0; 
 
