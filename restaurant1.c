@@ -145,7 +145,7 @@ int main()
     }
 	 total1=((idli*10)+(mendu*20)+(upma*20)+(poha*15)+(paratha*20)+(missal*80));
 		}
-		return total;
+		return total1;
 	}
 	int menu2()
 	{
