@@ -12,9 +12,8 @@ int menu1();
 int menu2();
 int menu3();
 int choose();
-
-int bill(int t1,int t2,int t3,char* n);
 void menu(int op_choice); 
+int bill(int t1,int t2,int t3,weldata data);
 
 int main(){
 
