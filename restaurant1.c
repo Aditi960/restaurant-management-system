@@ -284,7 +284,7 @@ int main()
             (butter_chicken*350) + (chicken_biryani*320) + (fish_curry*400) + (egg_curry*220) + (tandoori_chicken*380) + 
             (chicken_tikka_masala*320) + (prawn_pulao*420) + (chicken_fried_rice*300);
 
-    printf("Total bill: Rs. %d\n", total);
+    printf("Total bill: Rs. %d\n", total2);
     return total2;
 }
 	}
