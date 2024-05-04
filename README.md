@@ -14,8 +14,10 @@ Clone or download the repository to your local machine.
 Compile the source code using a C compiler.
 Run the compiled executable file.
 Follow the on-screen prompts to place orders and interact with the program.
+
+
 Usage Example
-vbnet
+
 Copy code
 Welcome to the restaurant management and billing system
 
