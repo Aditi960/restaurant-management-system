@@ -2,423 +2,353 @@
 #include<string.h>
 #include <stdlib.h>//for system()//
 #include<windows.h>//sleep()//
-typedef struct {
-    char name[100];
-    char gen;
-}weldata;
-
-weldata welcome();
-int menu1();
-int menu2();
-int menu3();
-int choose();
-void menu(int op_choice); 
-int bill(int t1,int t2,int t3,weldata data);
-
+#include <conio.h> 
+ #define MAX_DISH_NAME_LENGTH 19 
+ int menu1();
+void welcome(char name[]);
+void menu();
 int main(){
-
-		welcome();
-         weldata data=welcome();
-    if(data.gen=='F' || data.gen=='f')
-    {
-        printf("Welcome Ms.%s\n", data.name);
-    }
-    else if(data.gen=='M' || data.gen=='m')
-    {
-        printf("Welcome Mr.%s\n", data.name);
-    }
-    else{
-        printf("Please give the right input..\n");
-    }
-    printf("Wait for 5 seconds...\n");
-    for (int i = 5; i > 0; i--) {
-        printf("%d...\n", i);
-        // Pause for 1 second
-         sleep(1);
-		int op=choose();
-		menu(op);
-        int tt1=menu1();
-        int tt2=menu2();
-        int tt3=menu3();
-        bill(tt1, tt2, tt3, data);
-
-		return 0; 
-
-    }
-	}
-    weldata welcome()
-{
-    weldata data;
-    system("cls");
+     system("cls");
     printf("\n\nWelcome to the restaurant management and billing system\n");
     printf("\n \n \tA project by Aditi Thakare\n\n");
     printf("Press any key to continue...");
      getch();
     system("cls");
-    printf("\nEnter your name: ");
-    scanf("%s", data.name);
-    fflush(stdin);
-    printf("Enter F for female, M for male and O for others: ");
-    scanf(" %c", &data.gen); // Note the space before %c to consume any previous newline characters
-    return data;
+    menu();
+    
 }
-	int choose()
-	{
-		system("cls");
+void welcome(char name[]) {
+    
+   
+		 char gen;
+		
+    fflush(stdin);
+    printf("Enter F for female, M for male and O for others: \n");
+	
+    scanf(" %c", &gen);
+	
+	system("cls");
+    if(gen == 'F' || gen == 'f')
+    printf("\n\n\n\tMs.%s   Your total bill is --Rs ",name);
+    else if(gen == 'M' || gen == 'm')
+    printf("\n\n\n\tMr.%s   Your total bill is --Rs ",name);
+    else
+    printf("\n\n\n\t%s      Your total bill is --Rs ",name);
+
+    }
+    // Function to print the order for each dish with proper alignment
+    void printOrder(const char *dish, int qty)
+    {
+    printf("%-*s QTY %d\n", MAX_DISH_NAME_LENGTH, dish, qty);
+    }
+	void menu() {
+        
+        system("cls");
 		int ch;
 		printf("enter wheater u want :-\n"
 		"1.breakfast\n"
 		"2.lunch\n"
 		"3.dinner\n");
 		scanf("%d",&ch);
-		return ch;
+         while (getchar() != '\n');
+         system("cls");
+        
+    switch (ch) {
+        case 1:
+            menu1();
+            break;
+        case 2:
+            menu2();
 
-	}
-	void menu(int op_choice)
-	{
-		if(op_choice == 1)
-		{
-			menu1();
-		}
-		else if(op_choice == 2)
-		{
-			menu2();
-		}
-		else if(op_choice == 3)
-		{
-			menu3();
-		}
-	}
+            break;
+        case 3:
+           printf("menu2()");
+            break;
+        default:
+            printf("Invalid option!\n");
+            break;
+    }
+}
 	int menu1()
 	{
+        
 		int n;
-		int total1;
+		int total1=0;
+        int a = 0, b = 0, c = 0, d = 0, e = 0, f = 0;
 		printf("Your choices for the breakfast are\n");
 		printf("\t \t \t Veg \t \t \t\n");
-		printf("1.Idli Sambar \t -- 10Rs/pc \n ");
-		printf("2.Mendu Vada  \t -- 20Rs/pc \n ");
-		printf("3.Upma \t -- 20Rs/plate \n ");
-		printf("4.Poha \t -- 15Rs/plate \n ");
-		printf("5.Paratha \t -- 20Rs/pc \n ");
-		printf("6.Missal Pav\t -- 80Rs/plate with 2 pav \n ");
+		printf("1.Idli Samba   -- 10Rs/pc \n ");
+		printf("2.Mendu Vada   -- 20Rs/pc \n ");
+		printf("3.Upma         -- 20Rs/plate \n ");
+		printf("4.Poha         -- 15Rs/plate \n ");
+		printf("5.Paratha      -- 20Rs/pc \n ");
+		printf("6.Missal Pav   -- 80Rs/plate with 2 pav \n ");
+        fflush(stdin);
 		printf("enter your no of dishes\n");
 		scanf("%d",&n);
-		int arr[n];
-		for(int i=0;i<n;i++)
-		{
-			
-			printf("enter the dish no %d\n",i+1);
-			scanf("%d",&arr[i]);
-
-		}
-		{
-			int idli = 0, mendu = 0, upma = 0, poha = 0, paratha = 0, missal = 0;
-    for (int i = 0; i < n; i++) {
+        int arr[10];
+		for (int i = 0; i < n; i++) {
+        printf("Enter the dish number %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+    for (int i = 0; i < n; i++) 
+    {
         switch (arr[i]) {
             case 1:
-                idli++;
+                total1 += 10;
+                a++;
                 break;
             case 2:
-                mendu++;
+                total1 += 20;
+                b++;
                 break;
             case 3:
-                upma++;
+                total1 += 20;
+                c++;
                 break;
             case 4:
-                poha++;
+                total1 += 15;
+                d++;
                 break;
             case 5:
-                paratha++;
+                total1 += 20;
+                e++;
                 break;
             case 6:
-                missal++;
+                total1 += 80;
+                f++;
                 break;
             default:
                 printf("Invalid dish number entered %d\n", arr[i]);
                 break;
         }
-	}
-	printf("You have ordered:\n");
-    if (idli > 0) {
-        printf("%d Idli Sambar\n", idli);
     
-    if (mendu > 0) 
-        printf("%d Mendu Vada\n", mendu);
-	if (upma > 0) 
-        printf("%d Upma\n", upma);
-	if (poha> 0) 
-        printf("%d Poha\n", poha);
-	if (paratha> 0) 
-        printf("%d Paratha\n", paratha);
-	if (missal> 0) 
-        printf("%d Missal\n", missal);
     }
-	 total1=((idli*10)+(mendu*20)+(upma*20)+(poha*15)+(paratha*20)+(missal*80));
-		}
-		return total1;
-	}
-	int menu2()
+	 system("cls");
+     printf("You have ordered :-\n");
+     // In your main function or wherever you are printing the order
+    if (a > 0)
+    printOrder("Idli Sambar", a);
+    if (b > 0)
+    printOrder("Mendu Vada", b);
+    if (c > 0)
+    printOrder("Upma", c);
+    if (d > 0)
+    printOrder("Poha", d);
+    if (e > 0)
+    printOrder("Paratha", e);
+    if (f > 0)
+    printOrder("Missal Pav", f);
+
+printf("\n\n\nPress any key to continue...");
+     getch();
+    system("cls");
+
+		char name[100];
+    printf("\nEnter your name:\n ");
+    scanf("%s",name);
+
+        welcome(name);
+
+        printf("%d/-\n\n",total1);
+		
+        printf("\n\n\tThank You for visiting,\n\tVisit again %s !!",name);
+        printf("\n\n\n\nPress any key to exit...");
+        getch();
+        system("cls");
+        printf("Exiting in...\n");
+    for(int i = 5; i > 0; i--) {
+        printf("%d...\n", i);
+        // Pause for 1 second
+        sleep(1);
+    }
+    system("cls");
+    
+
+    return 0;
+    }
+int menu2()
 	{
+        
 		int n;
-		int total2;
-		// vegetarian options
-		printf("Vegetarian options for lunch:\n");
-		printf("\t1. Vegetable Biryani \t -- Rs. 300\n");
-		printf("\t2. Butter Paneer \t -- Rs. 250\n");
-		printf("\t3. Chana Masala \t -- Rs. 200\n");
-		printf("\t4. Paneer Tikka \t -- Rs. 280\n");
-		printf("\t5. Veg Fried Rice \t -- Rs. 180\n");
-		printf("\t6. Dal Tadka \t -- Rs150\n");
-		printf("\t7. Mixed Vegetable Curry \t -- Rs. 250\n");
-
-        // Non-vegetarian options
+		int total2=0;
+        int a = 0, b = 0, c = 0, d = 0, e = 0, f = 0,g=0,h=0,i=0,j=0,k=0,l=0,m=0,p=0,o=0;
+        printf("Vegetarian options for lunch:\n");
+		printf("\t1. Vegetable Biryani        -- Rs. 300\n");
+		printf("\t2. Butter Paneer            -- Rs. 250\n");
+		printf("\t3. Chana Masala             -- Rs. 200\n");
+		printf("\t4. Paneer Tikka             -- Rs. 280\n");
+		printf("\t5. Veg Fried Rice           -- Rs. 180\n");
+		printf("\t6. Dal Tadka                -- Rs. 150\n");
+		printf("\t7. Mixed Vegetable Curry    -- Rs. 250\n\n");
         printf("\nNon-vegetarian options for lunch:\n");
-        printf("\t11. Butter Chicken \t -- Rs. 350\n");
-        printf("\t12. Chicken Biryani \t -- Rs. 320\n");
-        printf("\t13. Fish Curry \t -- Rs. 400\n");
-        printf("\t14. Egg Curry \t -- Rs. 220\n");
-        printf("\t15. Tandoori Chicken \t -- Rs. 380\n");
-        printf("\t16. Chicken Tikka Masala \t -- Rs. 320\n");
-        printf("\t17. Prawn Pulao \t -- Rs. 420\n");
-        printf("\t18. Chicken Fried Rice \t -- Rs. 300\n");
-
+        printf("\t8. Butter Chicken           -- Rs. 350\n");
+        printf("\t9. Chicken Biryani          -- Rs. 320\n");
+        printf("\t10. Fish Curry              -- Rs. 400\n");
+        printf("\t11. Egg Curry               -- Rs. 220\n");
+        printf("\t12. Tandoori Chicken        -- Rs. 380\n");
+        printf("\t13. Chicken Tikka Masala    -- Rs. 320\n");
+        printf("\t14. Prawn Pulao             -- Rs. 420\n");
+        printf("\t15. Chicken Fried Rice      -- Rs. 300\n");
+        fflush(stdin);
 		printf("enter your no of dishes\n");
 		scanf("%d",&n);
-		int arr[n];
-		for(int i=0;i<n;i++)
-		{
-			
-			printf("enter the dish no %d\n",i+1);
-			scanf("%d",&arr[i]);
+        int arr[10];
+		for (int i = 0; i < n; i++) {
+        printf("Enter the dish number %d: ", i + 1);
+        scanf("%d", &arr[i]);
 
-		}
-		{
-			int vegbiryani = 0, Butter_Paneer = 0, Chana_Masala = 0, Paneer_Tikka = 0, Veg_f_Rice = 0, Dal_Tadka=0,Mixed_Veg_Curry=0,butter_chicken = 0, chicken_biryani = 0, fish_curry = 0, egg_curry = 0, tandoori_chicken = 0, chicken_tikka_masala = 0, prawn_pulao = 0, chicken_fried_rice = 0;
-    for (int i = 0; i < n; i++) {
+ }
+    for (int i = 0; i < n; i++) 
+    {
         switch (arr[i]) {
+
+
             case 1:
-                vegbiryani++;
-                break;
+            total2 += 300;
+            a++;
+            break;
+
+
             case 2:
-                Butter_Paneer++;
-                break;
+            total2 += 250;
+            b++;
+            break;
+            
+            
             case 3:
-                Chana_Masala++;
-                break;
+            total2 +=200;
+            c++;
+            break;
+
+            
             case 4:
-                Paneer_Tikka++;
-                break;
+            total2 +=280;
+            d++;
+            break;
+
+
             case 5:
-                Veg_f_Rice++;
-                break;
+            total2 +=180;
+            e++;
+            break;
+
+
             case 6:
-               Dal_Tadka++;
-                break;
-			case 7:
-               Mixed_Veg_Curry++;
-                break;
-            case 11:
-                butter_chicken++;
-                break;
-            case 12:
-                chicken_biryani++;
-                break;
-            case 13:
-                fish_curry++;
-                break;
-            case 14:
-                egg_curry++;
-                break;
-            case 15:
-                tandoori_chicken++;
-                break;
-            case 16:
-                chicken_tikka_masala++;
-                break;
-            case 17:
-                prawn_pulao++;
-                break;
-            case 18:
-                chicken_fried_rice++;
-                break;
-            default:
-                printf("Invalid dish number entered %d\n", arr[i]);
-                break;
-        }
-    }
-	 printf("You have ordered:\n");
-    if (vegbiryani > 0) {
-        printf("%d Veg Biryani\n", vegbiryani);
-    }
-    if (Butter_Paneer > 0) {
-        printf("%d Butter Paneer\n", Butter_Paneer);
-    }
-    if (Chana_Masala > 0) {
-        printf("%d Chana Masala\n", Chana_Masala);
-    }
-    if (Paneer_Tikka > 0) {
-        printf("%d Paneer Tikka\n", Paneer_Tikka);
-    }
-    if (Veg_f_Rice > 0) {
-        printf("%d Veg Fried Rice\n", Veg_f_Rice);
-    }
-    if (Mixed_Veg_Curry > 0) {
-        printf("%d Mixed Vegetable Curry\n", Mixed_Veg_Curry);
-    }
-	if (butter_chicken > 0) {
-        printf("%d Butter Chicken\n", butter_chicken);
-    }
-    if (chicken_biryani > 0) {
-        printf("%d Chicken Biryani\n", chicken_biryani);
-    }
-    if (fish_curry > 0) {
-        printf("%d Fish Curry\n", fish_curry);
-    }
-    if (egg_curry > 0) {
-        printf("%d Egg Curry\n", egg_curry);
-    }
-    if (tandoori_chicken > 0) {
-        printf("%d Tandoori Chicken\n", tandoori_chicken);
-    }
-    if (chicken_tikka_masala > 0) {
-        printf("%d Chicken Tikka Masala\n", chicken_tikka_masala);
-    }
-    if (prawn_pulao > 0) {
-        printf("%d Prawn Pulao\n", prawn_pulao);
-    }
-    if (chicken_fried_rice > 0) {
-        printf("%d Chicken Fried Rice\n", chicken_fried_rice);
-    }
+            total2 +=150;
+            f++;
+            break;
 
-    total2 = (vegbiryani*10) + (Butter_Paneer*20) + (Chana_Masala*20) + (Paneer_Tikka*15) + (Veg_f_Rice*20) + (Mixed_Veg_Curry*80) + 
-            (butter_chicken*350) + (chicken_biryani*320) + (fish_curry*400) + (egg_curry*220) + (tandoori_chicken*380) + 
-            (chicken_tikka_masala*320) + (prawn_pulao*420) + (chicken_fried_rice*300);
 
-    printf("Total bill: Rs. %d\n", total2);
-    return total2;
-}
-	}
-	int menu3()
-	{
-        int n;
-		int total3;
-         printf("Vegetarian options for dinner:\n");
-    printf("\t1. Palak Paneer \t -- Rs. 250\n");
-    printf("\t2. Aloo Baingan \t -- Rs. 220\n");
-    printf("\t3. Vegetable Korma \t -- Rs. 280\n");
-    printf("\t4. Chana Masala \t -- Rs. 200\n");
-    printf("\t5. Mushroom Masala \t -- Rs. 240\n");
-
-   
-    printf("\nNon-vegetarian options for dinner:\n");
-    printf("\t6. Chicken Curry \t -- Rs. 320\n");
-    printf("\t7. Mutton Rogan Josh \t -- Rs. 380\n");
-    printf("\t8. Fish Tikka \t -- Rs. 350\n");
-    printf("\t9. Prawn Biryani \t -- Rs. 400\n");
-    printf("\t10. Chicken Kebabs \t -- Rs. 420\n");
-
-    printf("enter your no of dishes\n");
-		scanf("%d",&n);
-		int arr[n];
-		for(int i=0;i<n;i++)
-        {
-			
-			printf("enter the dish no %d\n",i+1);
-			scanf("%d",&arr[i]);
-        }
-            int Palak_Paneer = 0, Aloo_Baingan = 0, Vegetable_Korma = 0, Chana_Masala = 0, Mushroom_Masala = 0, Chicken_Curry = 0, Mutton_Rogan_Josh = 0, Fish_Tikka = 0, Prawn_Biryani = 0, Chicken_Kebabs = 0;
-    for (int i = 0; i < n; i++) {
-        switch (arr[i]) {
-            case 1:
-                Palak_Paneer++;
-                break;
-            case 2:
-                Aloo_Baingan++;
-                break;
-            case 3:
-                Vegetable_Korma++;
-                break;
-            case 4:
-                Chana_Masala++;
-                break;
-            case 5:
-                Mushroom_Masala++;
-                break;
-            case 6:
-                Chicken_Curry++;
-                break;
             case 7:
-                Mutton_Rogan_Josh++;
-                break;
+            total2 +=250;
+            g++;
+            break;
+
+
             case 8:
-                Fish_Tikka++;
-                break;
+            total2 +=350;
+            h++;
+            break;
+
+
             case 9:
-                Prawn_Biryani++;
-                break;
+            total2 +=320;
+            i++;
+            break;
+
+
             case 10:
-                Chicken_Kebabs++;
-                break;
+            total2 +=400;
+            j++;
+            break;
+
+
+            case 11:
+            total2 +=220;
+            k++;
+            break;
+
+
+            case 12:
+            total2 +=380;
+            l++;
+            break;
+
+
+            case 13:
+            total2 +=320;
+            m++;
+            break;
+
+
+            case 14:
+            total2 +=420;
+            p++;
+            break;
+
+
+            case 15:
+            total2 +=300;
+            o++;
+            break;
+
             default:
-                printf("Invalid dish number entered %d\n", arr[i]);
-                break;
+            printf("Invalid dish number entered %d\n", arr[i]);
+            break;
         }
-    }
-    printf("You have ordered:\n");
-    if (Palak_Paneer > 0) {
-        printf("%d Palak Paneer\n", Palak_Paneer);
-    }
-    if (Aloo_Baingan > 0) {
-        printf("%d Aloo Baingan\n", Aloo_Baingan);
-    }
-    if (Vegetable_Korma > 0) {
-        printf("%d Vegetable Korma\n", Vegetable_Korma);
-    }
-    if (Chana_Masala > 0) {
-        printf("%d Chana Masala\n", Chana_Masala);
-    }
-    if (Mushroom_Masala > 0) {
-        printf("%d Mushroom Masala\n", Mushroom_Masala);
-    }
-    if (Chicken_Curry > 0) {
-        printf("%d Chicken Curry\n", Chicken_Curry);
-    }
-    if (Mutton_Rogan_Josh > 0) {
-        printf("%d Mutton Rogan Josh\n", Mutton_Rogan_Josh);
-    }
-    if (Fish_Tikka > 0) {
-        printf("%d Fish Tikka\n", Fish_Tikka);
-    }
-    if (Prawn_Biryani > 0) {
-        printf("%d Prawn Biryani\n", Prawn_Biryani);
-    }
-    if (Chicken_Kebabs > 0) {
-        printf("%d Chicken Kebabs\n", Chicken_Kebabs);
-    }
-    total3 = (Palak_Paneer * 250) + (Aloo_Baingan * 220) + (Vegetable_Korma * 280) + (Chana_Masala * 200) + (Mushroom_Masala * 240) +(Chicken_Curry * 320) + (Mutton_Rogan_Josh * 380) + (Fish_Tikka * 350) + (Prawn_Biryani * 400) + (Chicken_Kebabs * 420);
-    return total3;
-    }
 
-int bill(int t1,int t2,int t3,weldata data)
-{
-  printf("Thank You ");
-    if (data.gen == 'F' || data.gen == 'f') {
-        printf("Ms.%s\n", data.name);
-    } else if (data.gen == 'M' || data.gen == 'm') {
-        printf("Mr.%s\n", data.name);
-    } else {
-        printf("for visiting our restaurant, %s\n", data.name); // Handle other genders or invalid input
-
+        }
+        system("cls");
+        printf("You have ordered :-\n");
+           if (a > 0)
+           printOrder("Vegetable Biryani", a);
+           if (b > 0)
+           printOrder("Butter Paneer", b);
+           if (c > 0)
+           printOrder("Chana Masala", c);
+           if (d > 0)
+           printOrder("Paneer Tikka", d);
+           if (e > 0)
+           printOrder("Veg Fried Rice", e);
+           if (f > 0)
+           printOrder("Dal Tadka", f);
+           if (g > 0)
+           printOrder("Mixed Vegetable Curry", g);
+           if (h> 0)
+           printOrder("Butter Chicken", h);
+           if (i> 0)
+           printOrder("Chicken Biryani", i);
+           if (j> 0)
+           printOrder("Fish Curry", j);
+           if (k> 0)
+           printOrder("Egg Curry", k);
+           if (l> 0)
+           printOrder("Tandoori Chicken", l);
+           if (m> 0)
+           printOrder("Chicken Tikka Masala", m);
+           if (p> 0)
+           printOrder("Prawn Pulao", p);
+           if (o> 0)
+           printOrder("Chicken Fried Rice", o);
+           printf("\n\n\nPress any key to continue...");
+           getch();
+           system("cls");
+           char name[100];
+           printf("\nEnter your name:\n ");
+          scanf("%s",name);
+           welcome(name);
+           printf("\n\n\tThank You for visiting,\n\tVisit again %s !!",name);
+           printf("\n\n\n\nPress any key to exit...");
+           getch();
+           system("cls");
+           printf("Exiting in...\n");
+           for(int i = 5; i > 0; i--) {
+           printf("%d...\n", i);
+           // Pause for 1 second
+           sleep(1);
+           }
+        system("cls");
+    
+           
     }
-    printf("\t Your total bill is = %d Rs",t1+t2+t3);
-    printf("\n Visit Again");
-    if (data.gen == 'F' || data.gen == 'f') {
-        printf("Ms.%s\n", data.name);
-    } else if (data.gen == 'M' || data.gen == 'm') {
-        printf("Mr.%s\n", data.name);
-    } else {
-        printf("%s\n", data.name);
-
-} 
-return 0;
-}
