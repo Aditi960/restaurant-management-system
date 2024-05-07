@@ -378,7 +378,7 @@ int menu2()
     fflush(stdin);
 		printf("enter your no of dishes\n");
 		scanf("%d",&n);
-        int arr[10];
+        int arr[n];
 		for (int i = 0; i < n; i++) {
         printf("Enter the dish number %d: ", i + 1);
         scanf("%d", &arr[i]);
