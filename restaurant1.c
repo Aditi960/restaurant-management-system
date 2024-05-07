@@ -5,6 +5,8 @@
 #include <conio.h> 
  #define MAX_DISH_NAME_LENGTH 21 
  int menu1();
+ int menu2();
+ int menu3();
 void welcome(char name[]);
 void menu();
 int main(){
