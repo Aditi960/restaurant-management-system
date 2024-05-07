@@ -350,5 +350,105 @@ int menu2()
            }
         system("cls");
     
+
            
+    }
+    int menu3()
+	{
+        int n;
+		int total2=0;
+        int a = 0, b = 0, c = 0, d = 0, e = 0, f = 0,g=0,h=0,i=0,j=0;
+        
+    printf("Vegetarian options for dinner:\n");
+    printf("\t1. Palak Paneer \t -- Rs. 250\n");
+    printf("\t2. Aloo Baingan \t -- Rs. 220\n");
+    printf("\t3. Vegetable Korma \t -- Rs. 280\n");
+    printf("\t4. Chana Masala \t -- Rs. 200\n");
+    printf("\t5. Mushroom Masala \t -- Rs. 240\n");
+
+    printf("\nNon-vegetarian options for dinner:\n");
+    printf("\t6. Chicken Curry \t -- Rs. 320\n");
+    printf("\t7. Mutton Rogan Josh \t -- Rs. 380\n");
+    printf("\t8. Fish Tikka \t -- Rs. 350\n");
+    printf("\t9. Prawn Biryani \t -- Rs. 400\n");
+    printf("\t10. Chicken Kebabs \t -- Rs. 420\n");
+    fflush(stdin);
+		printf("enter your no of dishes\n");
+		scanf("%d",&n);
+        int arr[10];
+		for (int i = 0; i < n; i++) {
+        printf("Enter the dish number %d: ", i + 1);
+        scanf("%d", &arr[i]);
+        }
+        for (int i = 0; i < n; i++) 
+    {
+        switch (arr[i]) {
+
+
+            case 1:
+            total2 += 250;
+            a++;
+            break;
+
+
+            case 2:
+            total2 += 220;
+            b++;
+            break;
+            
+            
+            case 3:
+            total2 +=280;
+            c++;
+            break;
+
+            
+            case 4:
+            total2 +=200;
+            d++;
+            break;
+
+
+            case 5:
+            total2 +=240;
+            e++;
+            break;
+
+
+            case 6:
+            total2 +=320;
+            f++;
+            break;
+
+
+            case 7:
+            total2 +=380;
+            g++;
+            break;
+
+
+            case 8:
+            total2 +=350;
+            h++;
+            break;
+
+
+            case 9:
+            total2 +=400;
+            i++;
+            break;
+
+
+            case 10:
+            total2 +=420;
+            j++;
+            break;
+
+
+            default:
+            printf("Invalid dish number entered %d\n", arr[i]);
+            break;
+        }
+        
+    }
     }
