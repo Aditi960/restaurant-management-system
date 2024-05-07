@@ -340,6 +340,7 @@ int menu2()
            printf("\nEnter your name:\n ");
           scanf("%s",name);
            welcome(name);
+           printf("%d/-\n\n",total2);
            printf("\n\n\tThank You for visiting,\n\tVisit again %s !!",name);
            printf("\n\n\n\nPress any key to exit...");
            getch();
@@ -481,6 +482,7 @@ int menu2()
            printf("\nEnter your name:\n ");
           scanf("%s",name);
            welcome(name);
+           printf("%d/-\n\n",total2);
            printf("\n\n\tThank You for visiting,\n\tVisit again %s !!",name);
            printf("\n\n\n\nPress any key to exit...");
            getch();
