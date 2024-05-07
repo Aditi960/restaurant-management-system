@@ -449,6 +449,45 @@ int menu2()
             printf("Invalid dish number entered %d\n", arr[i]);
             break;
         }
-        
     }
+        system("cls");
+        printf("You have ordered :-\n");
+           if (a > 0)
+           printOrder("Palak Paneer", a);
+           if (b > 0)
+           printOrder("Aloo Baingan", b);
+           if (c > 0)
+           printOrder("Vegetables Korma", c);
+           if (d > 0)
+           printOrder("Chana Masala", d);
+           if (e > 0)
+           printOrder("Mushroom Masala", e);
+           if (f > 0)
+           printOrder("Chicken Curry", f);
+           if (g > 0)
+           printOrder("Mutton Rogan Josh", g);
+           if (h> 0)
+           printOrder("Fish Tikka", h);
+           if (i> 0)
+           printOrder("Prawns Biryani ", i);
+           if (j> 0)
+           printOrder("Chicken Kebabs", j);
+           printf("\n\n\nPress any key to continue...");
+           getch();
+           system("cls");
+           char name[100];
+           printf("\nEnter your name:\n ");
+          scanf("%s",name);
+           welcome(name);
+           printf("\n\n\tThank You for visiting,\n\tVisit again %s !!",name);
+           printf("\n\n\n\nPress any key to exit...");
+           getch();
+           system("cls");
+           printf("Exiting in...\n");
+           for(int i = 5; i > 0; i--) {
+           printf("%d...\n", i);
+           // Pause for 1 second
+           sleep(1);
+           }
+        system("cls");
     }
