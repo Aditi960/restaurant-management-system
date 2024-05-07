@@ -495,3 +495,11 @@ int menu2()
            }
         system("cls");
     }
+    /*End of code
+    Pls note that this code is excluding the file handling features provided by C
+    Doesnt contains file input or output or storage
+    Pls make sure to have windows OS , else the program will run well but without the sleep function
+    final edit 
+    thank you
+    Aditi Thakare*/
+    
